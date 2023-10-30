@@ -29,25 +29,10 @@ public final class My_Calculator extends JFrame
     private JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,
                     b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,
                     b29,b30,b31,b32,b33,b34,b35,b36 ;
-    
-    /*public final class dis
-    {
-        My_Calculator frame = new My_Calculator();
-       
-
-        public void setFrame(My_Calculator frame) 
-        {
-            this.frame = frame;
-            frame.setBounds(600,60,355,740);
-        }
-
-    }*/
-    
+     
     My_Calculator()
     {
         info();
-        //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //this.setBounds(20,60,355,740);
     }
     
     public void info()
@@ -55,7 +40,6 @@ public final class My_Calculator extends JFrame
         c = this.getContentPane();
         c.setLayout(null);
         c.setBackground(Color.DARK_GRAY);
-        //c.setBounds(20,60,355,800);
         
         f = new Font("Bohoni MT Black",Font.ITALIC + Font.BOLD,15);
         f1 = new Font("Bohoni MT Black",Font.ITALIC + Font.BOLD,22);
@@ -81,26 +65,12 @@ public final class My_Calculator extends JFrame
         //b1.setOpaque(false);
         b1.setCursor(cr);
         c.add(b1);
-        /*b1.addActionListener(new ActionListener(){
-        
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            double d = Double.parseDouble(String.valueOf(tf.getText()));
-            d = Math.log(d);
-            tf.setText(String.valueOf(d));
-        }
-        
-        });*/
         b1.addActionListener(new ActionListener(){
         
         @Override
         public void actionPerformed(ActionEvent e)
         {
             a = Double.parseDouble(tf.getText());
-            //double log = Math.log10(Math.toDegrees(a));
-            //double log = Math.log(Math.toDegrees(a));
-            //double log = Math.log(a);
             double log = Math.log10(a);
             tf.setText(String.valueOf(log));
         }
@@ -165,51 +135,21 @@ public final class My_Calculator extends JFrame
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            //b4.addActionListener(new ActionListener(){
-        
-        //@Override
-        //public void actionPerformed(ActionEvent e)
-        {
             tf.setText("OFF");
-            
-            //String Shift = tf.getText();
             String Off = tf.getText();
-            
-            //String Enter_OFF = tf.getText() + b4.getText();
-            //tf.setText(Enter_OFF);
-            
-            //if(Shift.equals("SHIFT") && Off.equals("OFF"))
             if(Off.equals("OFF"))
-            {
-                //String Enter_OFF = tf.getText() + b4.getText();
-                //tf.setText(Enter_OFF);
-                
+            { 
                 My_Calculator_Test_Class frame = new My_Calculator_Test_Class();
                 frame.setVisible(true);
                 dispose();
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setResizable(false);
                 frame.setBounds(600,60,355,780);
-                
-                //String Enter_OFF = tf.getText() + b4.getText();
-                //tf.setText(Enter_OFF);
             }
             else
             {
                 JOptionPane.showMessageDialog(null, "Please enter SHIFT and ON buttons");
             }
-            
-            /*tf2.setText("");
-            //JOptionPane.showMessageDialog(null, "ON");
-            My_Calculator frame = new My_Calculator();
-            frame.setVisible(true);
-            dispose();
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setResizable(false);
-            frame.setBounds(20,60,355,580);*/
-        }
-        
-        //});
         }
         
         });
@@ -222,25 +162,6 @@ public final class My_Calculator extends JFrame
         //b5.setOpaque(false);
         b5.setCursor(cr);
         c.add(b5);
-        /*b5.addActionListener(new ActionListener(){
-        
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            //double d = Double.parseDouble(String.valueOf(tf.getText()));
-            //d = Math.sin(d);
-            //tf.setText(String.valueOf(d));
-            //double d = Math.sin(Double.parseDouble(tf.getText()));
-            //tf.setText(" ");
-            //tf.setText(tf.getText() + d);
-            
-            double d = Double.parseDouble(String.valueOf(tf.getText()));
-            Math.sin(Math.toRadians(a));
-            result = Math.sin(result);
-            tf.setText(String.valueOf(result));
-        }
-        
-        });*/
         b5.addActionListener(new ActionListener(){
         
         @Override
@@ -265,22 +186,10 @@ public final class My_Calculator extends JFrame
         
         @Override
         public void actionPerformed(ActionEvent e)
-        {
-            //if(a == 90)
-            //{
-                //tf.setText("1");
-                //String Enter_Number = tf.getText(); //+ b17.getText();
-                //tf.setText("1");
-            //}
-            //else
-            //{
-                a = Double.parseDouble(tf.getText());
-                double cos = Math.cos(Math.toRadians(a));
-                tf.setText(String.valueOf(cos));
-            //}
-            //a = Double.parseDouble(tf.getText());
-            //double cos = Math.cos(Math.toRadians(a));
-            //tf.setText(String.valueOf(cos));
+        { 
+            a = Double.parseDouble(tf.getText());
+            double cos = Math.cos(Math.toRadians(a));
+            tf.setText(String.valueOf(cos));
         }
         
         });
@@ -298,10 +207,6 @@ public final class My_Calculator extends JFrame
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            //a = Double.parseDouble(tf.getText());
-            //double tan = Math.tan(a);
-            //tf.setText(String.valueOf(tan));
-            
             a = Double.parseDouble(tf.getText());
             double tan = Math.tan(Math.toRadians(a));
             tf.setText(String.valueOf(tan));
@@ -630,7 +535,6 @@ public final class My_Calculator extends JFrame
         public void actionPerformed(ActionEvent e)
         {
             String answer;
-            //num_01 = Double.parseDouble(tf.getText());
             num_02 = Double.parseDouble(tf.getText());
             
             if(sign == "+")
@@ -656,42 +560,6 @@ public final class My_Calculator extends JFrame
                 result = num_01 / num_02;
                 answer = String.format("%.2f", result);
                 tf.setText(answer);
-            }
-            else if(sign == "x^y")
-            {
-                result = 1;
-                for(int i = 0;i < num_02;i++)
-                {
-                    result = num_01 * result;
-                }
-                answer = String.format("%.2f", result);
-                tf.setText(answer);
-            }
-            else if(sign == "π")
-            {
-                //result = 3.14159;
-                result = Math.PI;
-                answer = String.format("%.2f", result);
-                tf.setText(answer);
-                //double d;
-                //d = 3.14159;
-                //tf.setText(String.valueOf(d));
-            }
-            else if(sign == "sin")
-            {
-                /*if(tf.getText().equals(" "))
-                {
-                    tf.setText(" ");
-                }
-                else
-                {
-                    a = Math.sin(Double.parseDouble(tf.getText()));
-	            tf.setText("");
-	            tf.setText(tf.getText() + a);
-                }*/
-                double d = Double.parseDouble(String.valueOf(tf.getText()));
-                d = Math.sin(d);
-                tf.setText(String.valueOf(d));
             }
         }
         
@@ -780,24 +648,12 @@ public final class My_Calculator extends JFrame
         public void actionPerformed(ActionEvent e)
         {
             double d;
-            //d = 3.14159;
             d = Math.PI;
             tf.setText(String.valueOf(d));
         }
         
         });
-        /*b29.addActionListener(new ActionListener(){
-        
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            a = Double.parseDouble(tf.getText());
-            double d = Math.PI;
-            tf.setText(String.valueOf(d));
-        }
-        
-        });*/
-        
+    
         b30 = new JButton("∛"); 
         b30.setBounds(100,170,70,50);
         b30.setFont(f);
@@ -872,7 +728,6 @@ public final class My_Calculator extends JFrame
         public void actionPerformed(ActionEvent e)
         {
             double d = Double.parseDouble(String.valueOf(tf.getText()));
-            //d = Math.log10(d);
             d = Math.log(d);
             tf.setText(String.valueOf(d));
         }
@@ -924,7 +779,7 @@ public final class My_Calculator extends JFrame
         b36.setFont(f);
         b36.setForeground(Color.DARK_GRAY);
         b36.setBackground(Color.GRAY);
-        //b1.setOpaque(false);
+        //b36.setOpaque(false);
         b36.setCursor(cr);
         c.add(b36);
         b36.addActionListener(new ActionListener(){
@@ -945,14 +800,4 @@ public final class My_Calculator extends JFrame
         
         });
     }
-    
-    /*public void main( ) 
-    {
-        My_Calculator frame = new My_Calculator();
-        frame.setVisible(true);
-        frame.setBounds(20,60,355,640);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
-        frame.setTitle("CASIO");
-    }*/
 }
